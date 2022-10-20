@@ -4,7 +4,13 @@ const { Client, Collection, Intents } = require('discord.js'); //import discord.
 const token = process.env.CLIENT_TOKEN;
 const http = require('http');
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }); //create new client
+const client = new Client({ 
+	intents: [
+		"GUILDS", 
+		"GUILD_MESSAGES",
+		"GUILD_VOICE_STATES"
+	], 
+}); //create new client
 
 // retrieve command file 
 client.commands = new Collection();
